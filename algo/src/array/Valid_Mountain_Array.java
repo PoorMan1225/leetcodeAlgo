@@ -25,6 +25,7 @@ public class Valid_Mountain_Array {
         }
         // 2. 봉우리를 못찾았다면 false
         if (idx < 0) return false;
+
         // 3. 봉우리를 찾고 찾은 봉우리부터 점점 우하향인지 혹은 우상향인지 체크
         int left = idx - 1;
         int right = idx + 1;
