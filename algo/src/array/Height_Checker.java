@@ -1,6 +1,8 @@
 package array;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Height_Checker {
     public static void main(String[] args) {
@@ -21,6 +23,11 @@ public class Height_Checker {
         return count;
     }
 
+    /**
+     * 계수정렬 사용
+     * 누적합을 사용해서 구하지만 누적합의 제한인 배열 때문에 일반적으로 사용하기 힘든 단점이 있다.
+     * 하지만 인덱스를 구하는 부분이 다른 곳에서도 적용하기 좋으므로 활용하기 좋다.
+     */
     public int _heightChecker(int[] heights) {
         // count 배열 생성
         int[] count = new int[101];
@@ -51,5 +58,49 @@ public class Height_Checker {
             if(heights[--count[heights[i]]] != heights[i]) c++;
         }
         return c;
+    }
+
+    /**
+     * 이건 인덱스를 사용한 계수정렬이 아닌 Min, Max 를 활용한 계수정렬이다.
+     */
+    private void countingSort(int[] arr) {
+        // Map 을 만든다.
+        Map<Integer, Integer> counts = new HashMap<>();
+        // 최대값 최소값을 찾는다.
+        int minVal = Arrays.stream(arr).min().getAsInt();
+        int maxVal = Arrays.stream(arr).max().getAsInt();
+
+        // 각 요소들의 count 값을 넣는다. (계수를 넣는다.)
+        for (int val : arr) {
+            counts.put(val, counts.getOrDefault(val, 0) + 1);
+        }
+
+        int index = 0;
+        // minValue 를 초기화 하고 maxValue 까지 value 를 증가시킨다.
+        for (int val = minVal; val <= maxVal; ++val) {
+            // counts 에 value 값이 0보다 클경우만
+            while (counts.getOrDefault(val, 0) > 0) {
+                arr[index] = val;
+                index += 1;
+                counts.put(val, counts.get(val) - 1);
+            }
+        }
+    }
+
+    public int __heightChecker(int[] heights) {
+        // Sort the array using counting sort.
+        int[] sortedHeights = heights.clone();
+        countingSort(sortedHeights);
+
+        int count = 0;
+        // Loop through the original and sorted arrays.
+        for (int i = 0; i < sortedHeights.length; ++i) {
+            // Increment count if elements at the same index differ.
+            if (heights[i] != sortedHeights[i]) {
+                count += 1;
+            }
+        }
+        // Return the total count of differing elements.
+        return count;
     }
 }
