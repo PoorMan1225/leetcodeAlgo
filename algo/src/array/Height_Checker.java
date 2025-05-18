@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Height_Checker {
     public static void main(String[] args) {
-
+        countingSort(new int[]{1,1,4,2,1,3});
     }
 
     // 문제 설명
@@ -46,15 +46,11 @@ public class Height_Checker {
             count[i] += count[i-1];
         }
         int c = 0; // 카운트 변수
-        // 뒤에서 부터 반복해야 한다 앞에서 부터 하게 되면
-        // count 값이 감소하지 않아서 이상한 위치를 가리킬 수 있게 된다.
         for(int i = heights.length - 1; i >= 0; i--){
-            // count[height[2]] 인덱스 정보를 통해서
-            // 해당 인덱스와 현재 값이 정확한 위치에 있는지 체크
-            // 체크 후에 누적 합 값을 감소시킨다.
-            // 감소시키지 않으면 정확한 위치를 찾을 수 없게된다.
-            // 왜냐하면 이미 배치된곳에 또 배치될 수 있다 그래서 현재 위치 즉 i 와 배치된 위치가 틀어질 수 있기 때문에
-            // 맞는 위치라도 잘못된 위치라고 할 수 도 있다.
+            // count[heights[i]] 는 순서대로라고 가정할때
+            // 자기 포함해서 자기 뒤에 개수가 몇개 있다 이렇게 생각할 수 있다.
+            // 그래서 배치를 하고 같은 숫자면 자리를 감소시켜서 재배치를 해야 하기 때문에 -- 로 감소시키고 그리고 인덱스를 찾으려면
+            // 숫자에서 하나를 감소시켜야 하기때문에 -- 가 필요하다.
             if(heights[--count[heights[i]]] != heights[i]) c++;
         }
         return c;
@@ -63,7 +59,7 @@ public class Height_Checker {
     /**
      * 이건 인덱스를 사용한 계수정렬이 아닌 Min, Max 를 활용한 계수정렬이다.
      */
-    private void countingSort(int[] arr) {
+    private static void countingSort(int[] arr) {
         // Map 을 만든다.
         Map<Integer, Integer> counts = new HashMap<>();
         // 최대값 최소값을 찾는다.
@@ -78,29 +74,48 @@ public class Height_Checker {
         int index = 0;
         // minValue 를 초기화 하고 maxValue 까지 value 를 증가시킨다.
         for (int val = minVal; val <= maxVal; ++val) {
-            // counts 에 value 값이 0보다 클경우만
+            // value 값이 6이라면 6의 카운트 개수만큼 index 를 증가시켜서 추가한다.
             while (counts.getOrDefault(val, 0) > 0) {
                 arr[index] = val;
                 index += 1;
                 counts.put(val, counts.get(val) - 1);
             }
         }
+        System.out.println("Arrays.toString(arr) = " + Arrays.toString(arr));
     }
 
+    /**
+     * 이 코드는 leet code 에서 가장 추천을 많이 받은 코드다.
+     */
     public int __heightChecker(int[] heights) {
-        // Sort the array using counting sort.
-        int[] sortedHeights = heights.clone();
-        countingSort(sortedHeights);
+        // 제한 배열을 지정한다.
+        int[] heightToFreq = new int[101];
 
-        int count = 0;
-        // Loop through the original and sorted arrays.
-        for (int i = 0; i < sortedHeights.length; ++i) {
-            // Increment count if elements at the same index differ.
-            if (heights[i] != sortedHeights[i]) {
-                count += 1;
-            }
+        // 카운트를 증가시킨다.
+        for (int height : heights) {
+            heightToFreq[height]++;
         }
-        // Return the total count of differing elements.
-        return count;
+
+        int result = 0;
+        int curHeight = 0;
+
+        // 정렬을 한후 비교하는 것을 nlogn 의 정렬을 사용하지 않고
+        // 카운팅 소트를 사용후 비교하고 있다.
+        for (int i = 0; i < heights.length; i++) {
+            // 가장 큰 숫자 까지 curHeight 을 증가시키면서
+            // 만약 값이 없다면 curHeight 을 증가시키다가 값이 있으면
+            while (heightToFreq[curHeight] == 0) {
+                curHeight++;
+            }
+
+            // 가장 작은 값을 찾앗으므로 비교한다.
+            // 여기서는 같지 않으면(자기 자리가 아니므로) 결과를 올린다.
+            if (curHeight != heights[i]) {
+                result++;
+            }
+            heightToFreq[curHeight]--;
+        }
+
+        return result;
     }
 }
