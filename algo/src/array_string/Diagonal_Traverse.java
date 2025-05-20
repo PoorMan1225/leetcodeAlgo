@@ -5,16 +5,12 @@ import java.util.Arrays;
 public class Diagonal_Traverse {
     public static void main(String[] args) {
         int[][] input = new int[][]{
-                {1, 2, 3},
+                {1, 2},
                 {4, 5},
                 {7, 8},
         };
-//        final int[] result = findDiagonalOrder(input);
-//        System.out.println("==============[ 좌하우상순회 ]=================");
-//        좌하우상순회(input);
-//        System.out.println("==============[ 우상좌하순회 ]=================");
-//        우상좌하순회(input);
-//        System.out.println("==============[ 좌상우하순회 ]=================");
+        final int[] diagonalOrderSimulation = findDiagonalOrderSimulation(input);
+        System.out.println("Arrays.toString(diagonalOrderSimulation) = " + Arrays.toString(diagonalOrderSimulation));
     }
 
     /**
@@ -51,6 +47,53 @@ public class Diagonal_Traverse {
     /**
      * 사실 이런문제의 경우 시뮬레이션으로 구하는게
      * 훨씬 더 빨리 구할 수 있을것 같다. 그게더 직관적이고 어떻게보면 사각 달팽이와 같기 때문에 시뮬레이션으로
-     * 구하는게 더 좋을 수 있다. 
+     * 구하는게 더 좋을 수 있다.
+     *
+     * 인덱스를 증가시키는 부분을 while 로 처리를 해보자.
      */
+
+    public static int[] findDiagonalOrderSimulation(int[][] mat) {
+        int n = mat[0].length;
+        int m = mat.length;
+        int[] result = new int[n * m];
+        boolean isUp = true;
+
+        int index = 0;
+        int x = 0;
+        int y = 0;
+        result[index++] = mat[y][x];
+
+        while (x != n - 1 || y != m - 1) {
+            if (isUp) {
+                if (x + 1 < n && y - 1 >= 0) {
+                    x++;
+                    y--;
+                    result[index++] = mat[y][x];
+                } else if (x + 1 < n && y - 1 < 0) {
+                    x++;
+                    result[index++] = mat[y][x];
+                    isUp = false;
+                } else if (x + 1 >= n) {
+                    y++;
+                    result[index++] = mat[y][x];
+                    isUp = false;
+                }
+            } else {
+                if (x - 1 >= 0 && y + 1 < m) {
+                    x--;
+                    y++;
+                    result[index++] = mat[y][x];
+                } else if (y + 1 < m && x - 1 < 0) {
+                    y++;
+                    result[index++] = mat[y][x];
+                    isUp = true;
+                } else if (y + 1 >= m) {
+                    x++;
+                    result[index++] = mat[y][x];
+                    isUp = true;
+                }
+            }
+        }
+        return result;
+    }
 }
