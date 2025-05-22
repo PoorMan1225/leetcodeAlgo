@@ -44,7 +44,7 @@ public class Implement_strStr {
     }
 
     /**
-     * 변수가 너무 많아지고 외부 함수가 필요한 경우 함수사용을 적극적으로 해보자.  
+     * 변수가 너무 많아지고 외부 함수가 필요한 경우 함수사용을 적극적으로 해보자.
      * 함수로 분리 하지 않으면 변수가 많아져서 머리속이 복잡해질 수 있다.
      */
     public int __strStr(String haystack, String needle) {
