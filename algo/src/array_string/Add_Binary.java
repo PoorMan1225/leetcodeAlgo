@@ -63,6 +63,8 @@ public class Add_Binary {
         StringBuilder res = new StringBuilder();
         int i = a.length() - 1;
         int j = b.length() - 1;
+        // 생각해보면 carry 이건만으로 충분하다. 다음에 더해야 하는지
+        // 조건을 잘 정의하는게 중요한것 같다.
         int carry = 0;
         while(i >= 0 || j >= 0){
             int sum = carry;
