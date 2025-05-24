@@ -6,6 +6,7 @@ public class Two_Sum_2 {
     }
 
     /**
+     * 이분탐색 문제 풀이. (사실 투포인터로 풀어도 무방)
      * 정수 오버 플로 방지.
      * left + (right - left) / 2
      * = left + (right / 2 - left / 2)     ← 분배법칙
