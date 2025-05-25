@@ -4,8 +4,8 @@
 # Explore -> Learn section 
 
 # 순서 
-- Array					(2025-05-16 완료)
-- Array and String
+- Array					      (2025-05-16 완료)
+- Array and String    (2025-05-25 완료)
 - Linked List
 - Queue & Stack
 - Heap
