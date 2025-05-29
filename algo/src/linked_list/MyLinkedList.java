@@ -102,11 +102,3 @@ public class MyLinkedList {
     }
 }
 
-class SinglyNode {
-    int val;
-    SinglyNode next;
-
-    SinglyNode(int x) {
-        val = x;
-    }
-}

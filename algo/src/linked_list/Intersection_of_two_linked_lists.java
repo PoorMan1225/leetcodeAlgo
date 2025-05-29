@@ -63,14 +63,4 @@ public class Intersection_of_two_linked_lists {
         }
         return count;
     }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 }

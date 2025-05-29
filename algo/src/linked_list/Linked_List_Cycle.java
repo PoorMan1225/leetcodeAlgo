@@ -1,8 +1,6 @@
 package linked_list;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class Linked_List_Cycle {
@@ -14,16 +12,6 @@ public class Linked_List_Cycle {
         root.next.next.next.next = root.next;
         final boolean b = hasCycle(root);
         System.out.println("b = " + b);
-    }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
     }
 
     /**
