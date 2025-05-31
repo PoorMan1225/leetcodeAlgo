@@ -74,7 +74,7 @@ public class Odd_Even_Linked_List {
         } else {
             // 홀수 인덱스일 때
             removeNode(curr, curr.next, append, cnt + 1);
-            return curr; 
+            return curr;
         }
     }
 
