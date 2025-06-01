@@ -1,4 +1,4 @@
-package linked_list;
+package double_linked_list;
 
 public class DoublyListNode {
     int val;

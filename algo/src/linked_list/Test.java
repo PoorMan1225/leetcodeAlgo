@@ -1,6 +1,6 @@
 package linked_list;
 
-import java.util.LinkedList;
+import double_linked_list.MyDoubleLinkedList;
 
 public class Test {
     public static void main(String[] args) {
