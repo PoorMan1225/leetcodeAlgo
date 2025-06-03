@@ -56,17 +56,22 @@ public class Flatten_a_Multilevel_Doubly_Linked_List {
         return head;
     }
 
+    /**
+     * 재귀적 코드
+     * tail 로 마지막 변수를 유지하면서 재귀적으로 접근한다.
+     * stackframe 범위 밖에 있는 tail 로 유지를 해야 하는데 유지하지 않고 구현하는 방법도 존재 하는것 같다.
+     */
     static Node tail = null;
     public static Node flattenRecur(Node head) {
         if (head == null) return null;
-        head.prev = tail;
-        tail = head;
+        head.prev = tail; // 꼬리 부분을 이전으로 변경한다.
+        tail = head; // head 와 tail 을 같게 유지한다.
 
-        Node nextNode = head.next;
+        Node nextNode = head.next; // 다음 노드를 보관해야 한다 child 탐방이 끝난 후 nextNode 로 탐방을 재순회 해야 한다.
 
-        head.next = flatten(head.child); // flatten child first
-        head.child = null;
-        tail.next = flatten(nextNode); // then flatten original next
-        return head;
+        head.next = flatten(head.child); // child 부분을 탐방한다.
+        head.child = null;               // head 의 child 를 null 로 만들어서 연결을 끊어야 한다.
+        tail.next = flatten(nextNode);   // tail 이 꼬리 노드를 유지하기 때문에 꼬리노드 기준으로 다음 노드를 붙인다.
+        return head;                     // 이부분이 의외로 굉장히 중요한데. 현재노드가 종료될때 반환해야지 이전노드의 next 에 연결할 수 있다.
     }
 }
