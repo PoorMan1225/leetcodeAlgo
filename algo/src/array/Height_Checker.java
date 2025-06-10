@@ -104,6 +104,7 @@ public class Height_Checker {
         for (int i = 0; i < heights.length; i++) {
             // 가장 큰 숫자 까지 curHeight 을 증가시키면서
             // 만약 값이 없다면 curHeight 을 증가시키다가 값이 있으면
+            // 여기서 숫자를 증가 시키는것은 1 1 1 2 이런 상황이면 3 1 이렇게 카운팅이 되니까 결국 curHeight 인덱스가 각 자리가 된다.
             while (heightToFreq[curHeight] == 0) {
                 curHeight++;
             }
