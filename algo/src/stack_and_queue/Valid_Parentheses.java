@@ -43,9 +43,11 @@ public class Valid_Parentheses {
             else if (c == '{') stack.push('}');
             else if (c == '[') stack.push(']');
             else {
+                // 오른쪽 괄호가 더많이 들어왔을경우 stack 이 이미 비어 있을 수 있다.
                 if (stack.isEmpty() || stack.pop() != c) return false;
             }
         }
+        // 왼쪽 괄호가 더많이 들어왔을 경우 스택에 값이 있을 수 있다.
         return stack.isEmpty();
     }
 }
