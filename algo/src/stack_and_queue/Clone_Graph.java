@@ -8,7 +8,7 @@ public class Clone_Graph {
     }
 
     public Node cloneGraph(Node node) {
-        if(node == null) return null;
+        if (node == null) return null;
         Map<Integer, Node> visited = new HashMap<>();
         Node copyNode = new Node();
         copyNode.val = node.val;
@@ -24,8 +24,8 @@ public class Clone_Graph {
     public void cloneGraphRecur(Node node, Node copyNode, Map<Integer, Node> visited) {
         visited.put(copyNode.val, copyNode);
 
-        for(Node n : node.neighbors) {
-            if(visited.get(n.val) == null) {
+        for (Node n : node.neighbors) {
+            if (visited.get(n.val) == null) {
                 Node newNode = new Node();
                 newNode.val = n.val;
                 newNode.neighbors = new ArrayList<>();
@@ -59,14 +59,53 @@ public class Clone_Graph {
         visited.put(copy.val, copy);
 
         for (Node neighbor : node.neighbors) {
+            // 방문한 노드면 방문한 노드 추가.
+            // 방문 하지 않았다면 신규 노드를 추가.
             copy.neighbors.add(clone(neighbor, visited));
         }
 
         return copy;
     }
 
+    /**
+     * 스택으로 구현 스택을 사용하면 순서가 반대로 되지만 노드의 연결은 순서가 그렇게 중요하지 않음.
+     * neighbors 의 add 할때만 순서를 유지 해주면된다.
+     */
+    private Node __cloneGraphStack(Node node) {
+        if (node == null) return null;
+
+        Map<Integer, Node> visited = new HashMap<>();
+        Stack<Node> stack = new Stack<>();
+
+        Node root = new Node(node.val, new ArrayList<>());
+        visited.put(node.val, root);
+        stack.push(node);
+
+        while (!stack.isEmpty()) {
+            Node curr = stack.pop();
+
+            for (Node neighbor : curr.neighbors) {
+                if (!visited.containsKey(neighbor.val)) {
+                    Node cloneNeighbor = new Node(neighbor.val, new ArrayList<>());
+                    visited.put(neighbor.val, cloneNeighbor);
+                    stack.push(neighbor);
+                }
+                visited.get(curr.val).neighbors.add(visited.get(neighbor.val));
+            }
+        }
+
+        return root;
+    }
+
     public static class Node {
         public int val;
         public List<Node> neighbors;
+
+        public Node() {}
+
+        public Node(int val, List<Node> neighbors) {
+            this.val = val;
+            this.neighbors = neighbors;
+        }
     }
 }
