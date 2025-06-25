@@ -69,9 +69,9 @@ public class Flatten_a_Multilevel_Doubly_Linked_List {
 
         Node nextNode = head.next; // 다음 노드를 보관해야 한다 child 탐방이 끝난 후 nextNode 로 탐방을 재순회 해야 한다.
 
-        head.next = flatten(head.child); // child 부분을 탐방한다.
+        head.next = flattenRecur(head.child); // child 부분을 탐방한다.
         head.child = null;               // head 의 child 를 null 로 만들어서 연결을 끊어야 한다.
-        tail.next = flatten(nextNode);   // tail 이 꼬리 노드를 유지하기 때문에 꼬리노드 기준으로 다음 노드를 붙인다.
+        tail.next = flattenRecur(nextNode);   // tail 이 꼬리 노드를 유지하기 때문에 꼬리노드 기준으로 다음 노드를 붙인다.
         return head;                     // 이부분이 의외로 굉장히 중요한데. 현재노드가 종료될때 반환해야지 이전노드의 next 에 연결할 수 있다.
     }
 }
