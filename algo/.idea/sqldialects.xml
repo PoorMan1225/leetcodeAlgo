@@ -2,6 +2,7 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Big_Coutries.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/sql/mysql/Biggest_Single_Number.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Consecutive_Numbers.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Customer_Placing_the_Largest_Number_of_Orders.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Customers_Whe_Never_Order.sql" dialect="MySQL" />
@@ -14,6 +15,7 @@
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Human_Traffic_of_Stadium.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Investments_in_2016.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Managers_with_al_Least_5_Direct_Reports.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/sql/mysql/Not_Boring_Movies.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Rank_Scores.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Rising_Temperature.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Sales_Person.sql" dialect="MySQL" />
