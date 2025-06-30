@@ -5,7 +5,7 @@ public class Guess_Number_Higher_or_Lower {
 
     }
 
-   /* public int guessNumber(int n) {
+    public int guessNumber(int n) {
         long left = 1;
         long right = n;
         while (left <= right) {
@@ -19,5 +19,9 @@ public class Guess_Number_Higher_or_Lower {
             }
         }
         return -1;
-    }*/
+    }
+
+    private int guess(int mid) {
+        return 0;
+    }
 }
