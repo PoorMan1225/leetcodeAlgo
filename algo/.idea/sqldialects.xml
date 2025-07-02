@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/sql/mysql/Actors_and_Directors_Who_Cooperated_At_Least_Three_Time.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Big_Coutries.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Biggest_Single_Number.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Consecutive_Numbers.sql" dialect="MySQL" />
@@ -18,6 +19,8 @@
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Investments_in_2016.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Managers_with_al_Least_5_Direct_Reports.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Not_Boring_Movies.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/sql/mysql/Product_Sales_Analysis_1.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/sql/mysql/Product_Sales_Analysis_3.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Rank_Scores.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Rising_Temperature.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Sales_Person.sql" dialect="MySQL" />

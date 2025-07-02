@@ -21,6 +21,7 @@ public class Find_K_Closest_Elements {
                 right = mid;
             }
         }
+        // 최소대값을 구하고 거기서 -1을 빼야 최대소값을 구할 수 있다.
         left = arr[left] == x ? left : left - 1;
         int prev = left;
         int next = left + 1;
