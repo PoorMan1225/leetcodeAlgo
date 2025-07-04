@@ -29,6 +29,7 @@
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Tree_Node.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Triangle_Judgement.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Trips_and_Users.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/sql/mysql/User_Activity_for_the_Past_30_Days_1.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/getNthHighestSalary.sql" dialect="GenericSQL" />
     <file url="PROJECT" dialect="MySQL" />
   </component>
