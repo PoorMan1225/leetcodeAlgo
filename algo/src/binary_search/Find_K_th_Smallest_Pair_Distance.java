@@ -36,7 +36,6 @@ public class Find_K_th_Smallest_Pair_Distance {
                 left = mid + 1;
             }
         }
-
         return left;
     }
 }

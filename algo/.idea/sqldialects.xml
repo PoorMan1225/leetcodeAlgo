@@ -17,6 +17,7 @@
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Friend_Requests_2.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Game_Play_Analysis.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Human_Traffic_of_Stadium.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/sql/mysql/Immediate_Food_Delivery_2.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Investments_in_2016.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Managers_with_al_Least_5_Direct_Reports.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Not_Boring_Movies.sql" dialect="MySQL" />
