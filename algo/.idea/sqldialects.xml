@@ -26,6 +26,7 @@
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Product_Sales_Analysis_3.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Project_Employees_1.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Rank_Scores.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/sql/mysql/Reformat_Department_Table.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Rising_Temperature.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Sales_Person.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Swap_Salary.sql" dialect="MySQL" />
