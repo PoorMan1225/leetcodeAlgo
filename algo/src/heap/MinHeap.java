@@ -44,7 +44,7 @@ public class MinHeap {
         int parent = index / 2;
         // If the newly added element is smaller than its parent node,
         // its value will be exchanged with that of the parent node
-        while ( minHeap[index] < minHeap[parent] && index > 1 ) {
+        while (minHeap[index] < minHeap[parent] && index > 1) {
             int temp = minHeap[index];
             minHeap[index] = minHeap[parent];
             minHeap[parent] = temp;
