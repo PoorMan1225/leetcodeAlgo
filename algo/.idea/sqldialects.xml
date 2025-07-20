@@ -3,6 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Actors_and_Directors_Who_Cooperated_At_Least_Three_Time.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Aricle_Views_1.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/sql/mysql/Average_Selling_Price.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Big_Coutries.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Biggest_Single_Number.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/sql/mysql/Consecutive_Numbers.sql" dialect="MySQL" />
