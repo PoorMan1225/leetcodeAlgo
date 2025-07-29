@@ -22,7 +22,7 @@ public class Unique_Binary_Search_Trees_2 {
      *
      * 1이 루트인 경우 먼저 보게 되면 1에서(1,0) 은 왼쪽 트리는 없기 때문에 제외하고
      * (2, 3) -> [(2, 2), (3, 3)] -> (2, 2) -> [(2, 1), (3, 2)] 이런식으로 왼쪽 트리와 오른쪽 트리를 만들어서
-     * 붙이게 되고 그게 최종 결과에 쓰이게 된다. 
+     * 붙이게 되고 그게 최종 결과에 쓰이게 된다.
      */
     private static List<TreeNode> build(int start, int end) {
         List<TreeNode> trees = new ArrayList<>();
