@@ -37,9 +37,9 @@ public class SegmentTree {
             tree[node] = arr[start];
         } else {
             int mid = (start + end) / 2;
-            build(node * 2, start, mid);
-            build(node * 2 + 1, mid + 1, end);
-            tree[node] = tree[node * 2] + tree[node * 2 + 1];
+            build(node * 2, start, mid); // 왼쪽 구간합 계산
+            build(node * 2 + 1, mid + 1, end); // 오른쪽 구간합 계산
+            tree[node] = tree[node * 2] + tree[node * 2 + 1]; // 전체 구간합 계산
         }
     }
 
