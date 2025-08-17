@@ -32,6 +32,9 @@ public class SegmentTree {
     }
 
     // 세그먼트 트리 빌드
+    // 구간 합을 구해야 하는 경우 세그먼트 트리를 사용해야 한다.
+    // 구간을 빠르게 구할 수 있는 방법은 세그먼트 트리의 경우 log n 이기 때문에 자주 계산해야 되는경우에
+    // 매우 빠르게 계산할 수 있다.
     void build(int node, int start, int end) {
         if (start == end) {
             tree[node] = arr[start];
