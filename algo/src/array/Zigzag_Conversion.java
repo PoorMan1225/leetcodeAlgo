@@ -11,22 +11,27 @@ public class Zigzag_Conversion {
     }
 
     public static String convert(String s, int numRows) {
-        List<StringBuilder> list = new ArrayList<>();
-        for(int i=0; i<numRows; i++) {
-            list.add(new StringBuilder());
+        if (numRows == 1 || s.length() <= numRows) return s;
+
+        StringBuilder[] rows = new StringBuilder[numRows];
+        for (int i = 0; i < numRows; i++) {
+            rows[i] = new StringBuilder();
         }
-        boolean isDown = true;
-        int row = 0;
+
+        int currRow = 0;
+        boolean goingDown = false;
+
         for (char c : s.toCharArray()) {
-            list.get(row).append(c);
-            if(row == 0 || row == numRows - 1) {
-                isDown = !isDown;
+            rows[currRow].append(c);
+            if (currRow == 0 || currRow == numRows - 1) {
+                goingDown = !goingDown; // 방향 전환
             }
-            row += isDown ? 1 : -1;
+            currRow += goingDown ? 1 : -1;
         }
+
         StringBuilder result = new StringBuilder();
-        for (StringBuilder sb : list) {
-            result.append(sb);
+        for (StringBuilder row : rows) {
+            result.append(row);
         }
         return result.toString();
     }
